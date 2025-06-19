@@ -19,8 +19,19 @@ A full-stack web application that generates **multiple-choice programming quizze
 
 The frontend is built using HTML, CSS, and plain JavaScript. It handles user interactions, state management, and UI updates.
 
+---
+
 ## Backend (Flask + Google Gemini AI)
 
 The backend is built using **Python** and **Flask**. It handles quiz generation, user session management, and communication with the Google Gemini AI API to fetch questions dynamically.
+
+---
+
+## 🚀 Demo
+
+Check out the demo video:
+
+[▶️ Watch Demo Video](./demo.mp4)
+
 
 
