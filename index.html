@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeMaster Quiz</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="splash-screen">
+        <div class="splash-content">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="CodeMaster Logo" class="splash-logo">
+            <p class="splash-text">CodeMaster Quiz</p>
+        </div>
+    </div>
+
+    <div id="auth-modal" class="modal">
+        <div class="modal-content">
+            <h2>Welcome to CodeMaster</h2>
+            <input type="text" id="username" placeholder="Enter your username" required>
+            <button id="start-btn">Start Learning</button>
+        </div>
+    </div>
+
+    <div id="main-content" class="hidden">
+        <div id="loading-spinner" class="loading-spinner hidden"></div>
+        <header>
+            <h1 class="main-title">CodeMaster Quiz</h1>
+            <div class="user-info">
+                <span id="username-display"></span>
+                <button id="logout-btn">Logout</button>
+            </div>
+        </header>
+
+        <section id="language-selection">
+            <h2>Choose Your Programming Language</h2>
+            <div class="language-grid">
+                <div class="language-card" data-language="Python">
+                    <img src="https://www.python.org/static/img/python-logo.png" alt="Python">
+                    <h3>Python</h3>
+                </div>
+                <div class="language-card" data-language="JavaScript">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg" alt="JavaScript">
+                    <h3>JavaScript</h3>
+                </div>
+                <div class="language-card" data-language="Java">
+                    <img src="/static/java-icon.png" alt="Java">
+                    <h3>Java</h3>
+                </div>
+                <div class="language-card" data-language="C">
+                    <img src="/static/c-icon.png" alt="C">
+                    <h3>C</h3>
+                </div>
+                <div class="language-card" data-language="CPP">
+                    <img src="/static/cpp-icon.png" alt="C++">
+                    <h3>C++</h3>
+                </div>
+                <div class="language-card" data-language="SQL">
+                    <img src="/static/sql-icon.png" alt="SQL">
+                    <h3>SQL</h3>
+                </div>
+            </div>
+        </section>
+
+        <section id="level-selection" class="hidden">
+            <button id="back-to-languages" class="back-btn">← Languages</button>
+            <h2 id="selected-language-title">Select Level</h2>
+            <div class="level-grid">
+            </div>
+        </section>
+
+        <section id="quiz-section" class="hidden">
+            <div class="quiz-header">
+                <button id="back-to-levels" class="back-btn">← Levels</button>
+                <h2 id="quiz-header-title"></h2>
+                <div class="quiz-stats">
+                    <span id="timer">Time: 10:00</span>
+                    <span id="current-question">Question: 1/10</span>
+                </div>
+            </div>
+            <div id="quiz-container">
+                <div id="question-area">
+                    <p id="question-text"></p>
+                    <div id="options-container">
+                    </div>
+                </div>
+                <div class="quiz-controls">
+                    <button id="next-question" class="hidden">Next Question</button>
+                    <button id="submit-quiz" class="hidden">Submit Quiz</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="results-section" class="hidden">
+            <h2>Quiz Results</h2>
+            <div id="results-summary">
+                <p id="score-display"></p>
+                <p id="performance-message"></p>
+            </div>
+            <div class="result-actions">
+                <button id="restart-quiz">Try Again</button>
+                <button id="quiz-next-level">Next Level</button>
+            </div>
+        </section>
+    </div>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+
+</html>

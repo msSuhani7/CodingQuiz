@@ -1,0 +1,341 @@
+:root {
+    --bg-dark: #121212;
+    --text-primary: #e0e0e0;
+    --accent-color: #4CAF50;
+    --accent-color-hover: #45a049;
+    --card-bg: #1E1E1E;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeOut 1s ease-in-out 3s forwards;
+}
+
+.splash-content {
+    text-align: center;
+}
+
+.splash-logo {
+    max-width: 200px;
+    margin-bottom: 20px;
+}
+
+.splash-text {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    color: var(--accent-color);
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 10px;
+    margin: 20px 0;
+    background-color: #2C2C2C;
+    border: none;
+    color: var(--text-primary);
+    border-radius: 5px;
+}
+
+.modal-content button {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content button:hover {
+    background-color: var(--accent-color-hover);
+}
+
+#main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.main-title {
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    color: var(--accent-color);
+    margin-bottom: 30px;
+}
+
+.user-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#logout-btn {
+    background-color: #FF6B6B;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.language-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+}
+
+.language-card {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.language-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px var(--shadow-color);
+}
+
+.language-card img {
+    max-width: 100px;
+    margin-bottom: 15px;
+}
+
+.language-card h3 {
+    color: var(--accent-color);
+}
+
+.level-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 20px;
+}
+
+.level-card {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.level-card:hover {
+    transform: scale(1.05);
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.level-card.locked {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.quiz-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.quiz-stats {
+    display: flex;
+    gap: 20px;
+}
+
+#quiz-container {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    padding: 30px;
+}
+
+#question-text {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+#options-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.option-btn {
+    background-color: #2C2C2C;
+    border: none;
+    color: var(--text-primary);
+    padding: 15px;
+    border-radius: 5px;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.option-btn:hover {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.option-btn.selected {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.option-btn.correct {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.option-btn.incorrect {
+    background-color: #F44336;
+    color: white;
+}
+
+.quiz-controls {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.quiz-controls button {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+#results-section {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+}
+
+#score-display {
+    font-size: 2rem;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
+.result-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.result-actions button {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.back-btn {
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@media (max-width: 768px) {
+    #options-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.loading-spinner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    z-index: 1000;
+}
+
+.blurred {
+    filter: blur(5px);
+    pointer-events: none;
+    user-select: none;
+}
+
+@keyframes spin {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
